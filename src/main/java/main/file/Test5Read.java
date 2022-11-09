@@ -1,6 +1,5 @@
-package main.exception.file;
+package main.file;
 
-import javax.imageio.IIOException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
