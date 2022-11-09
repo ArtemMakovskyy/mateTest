@@ -2,7 +2,12 @@ package main.exception;
 
 public class UserService {
     public int getUserScore(String[] records, String email) {
-        //write your code here
-        return 0;
+        for (String record : records) {
+            String[] data = record.split(":");
+            if (data[0].equals(email)) {
+                return Integer.parseInt(data[1]);
+            }
+        }
+        throw new UserNotFoundException("User with given email doesn't exist");
     }
 }
