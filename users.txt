@@ -1,3 +1,1 @@
-Bob
-Alice
-John
+John, Bob, Alice, John, Bob, Alice, John, Bob, Alice, John, 

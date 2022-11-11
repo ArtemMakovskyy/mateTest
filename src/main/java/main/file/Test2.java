@@ -10,7 +10,7 @@ public class Test2 {
         String[] users = new String[]{"Bob", "Alice", "John",};
         File file = new File("users.txt");
         for (String user : users) {
-            try (BufferedWriter br = new BufferedWriter(new FileWriter(file, true));) {
+            try (BufferedWriter br = new BufferedWriter(new FileWriter(new File("users.txt"),true));) {
                 br.write(user + ", ");
             } catch (IOException e) {
                 throw new RuntimeException("Can't write ", e);
