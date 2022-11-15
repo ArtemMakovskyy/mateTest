@@ -1,0 +1,4 @@
+We have a Car class and an Engine class.
+Define the clone() method so that the cloning will be deep.
+Add at least 5 fields to each class (Car and Engine).
+You should have Engine engine field in your Car - we have already added it.
