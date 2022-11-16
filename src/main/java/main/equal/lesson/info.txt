@@ -1,0 +1,13 @@
+Given class — Rectangle. Override it's methods equals()
+and hashCode() so, equals() compares Rectangle objects
+by it's fields: color, width and length. Also make
+sure that hashCode() follows the contract between
+equals and hashcode.
+
+
+
+Reflexive: x.equals(x) == true , an object must equal to itself.
+Symmetry: if(x.equals(y) == true) then y.equals(x) == true.
+Transitive: if x.equals(y) and y.equals(z); then x.equals(z).
+Consistent: if x.equals(y) == true and no value is modified, then it’s always true for every call
+For any non-null object x, x.equals(null) == false.
