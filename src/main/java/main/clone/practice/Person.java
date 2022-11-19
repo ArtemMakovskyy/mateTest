@@ -1,44 +1,45 @@
 package main.clone.practice;
 
-public class Person implements Cloneable{
-    String name;
-    Street street;
+import lombok.*;
 
-    public Person(String name, Street street) {
-        this.name = name;
-        this.street = street;
-    }
+import java.util.Objects;
 
-    public String getName() {
-        return name;
-    }
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Person {
+    private String name;
+    private String serName;
+    private int age;
+    private Sex sex;
+    private Street street;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Street getStreet() {
-        return street;
-    }
-
-    public void setStreet(Street street) {
-        this.street = street;
-    }
-
+//    @Override
+//    public Person clone() {
+//       return new Person(name, serName, age, sex, street.clone());
+//    }
     @Override
-    protected Person clone()  {
+    public Person clone() {
         try {
-            return (Person) super.clone();
+            Person clonePerson = (Person) super.clone();
+            return clonePerson;
         } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Can't clone", e);
         }
     }
 
     @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", street=" + street +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return getAge() == person.getAge() && Objects.equals(getName(), person.getName()) && Objects.equals(getSerName(), person.getSerName()) && getSex() == person.getSex() && Objects.equals(getStreet(), person.getStreet());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getSerName(), getAge(), getSex(), getStreet());
     }
 }

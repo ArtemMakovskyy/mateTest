@@ -74,7 +74,7 @@ public class Engine implements Cloneable {
         try {
             return (Engine) super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new RuntimeException("can't clonable engine class", e);
+            throw new RuntimeException("can't clone engine class", e);
         }
     }
 }
