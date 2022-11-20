@@ -11,7 +11,16 @@ public class Car {
         this.horsePower = builder.horsePower;
     }
 
-    public static class Builder{
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", horsePower=" + horsePower +
+                '}';
+    }
+
+    public static class Builder {
         private String model;
         private int engineVolume;
         private int horsePower;
@@ -30,7 +39,8 @@ public class Car {
             this.horsePower = horsePower;
             return this;
         }
-        public Car build(){
+
+        public Car build() {
             return new Car(this);
         }
     }
