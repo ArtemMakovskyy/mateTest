@@ -12,5 +12,11 @@ public class Fighter {
         this.damagePerHit = damagePerHit;
     }
 
-    // write getters for the fields
+    public int getHealth() {
+        return health;
+    }
+
+    public int getDamagePerHit() {
+        return damagePerHit;
+    }
 }
