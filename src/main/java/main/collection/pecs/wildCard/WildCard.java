@@ -1,4 +1,4 @@
-package main.collection.pecs;
+package main.collection.pecs.wildCard;
 
 import java.util.ArrayList;
 import java.util.Collection;
