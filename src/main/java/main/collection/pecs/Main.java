@@ -9,11 +9,30 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        practice();
+        List<Double> invariant = new ArrayList<>();
+        invariant.add(Double.valueOf(1));
+        invariant.add(Double.valueOf(1.5));
+        System.out.println(invariant);
+        System.out.println(invariant.get(1));
 
+        List<?> covariant = new ArrayList<>();
+//        question.add(Integer.valueOf(1));
+        covariant.get(0);
 
+        List<? extends Number> covariant2 = new ArrayList<>();
+//        covariant.add(Integer.valueOf(1));
+        covariant.get(0);
+
+        List<? super Number> contrvariant = new ArrayList<>();
 
     }
-    public static void wildCard_FirstLesson(){
+
+    public static void practice() {
+
+    }
+
+    public static void wildCard_FirstLesson() {
         //        Invariance
         System.out.println("THIS DON'T WORK   List<Number>myNumsInvariance = myInt;");
 //        List<Number>myNumsInvariance = myInt;
@@ -22,10 +41,9 @@ public class Main {
         Animal animal = cat;
 
 
-        List<Number>listNumber = new ArrayList<>();
+        List<Number> listNumber = new ArrayList<>();
         listNumber.add(Integer.valueOf(5));
         System.out.println(listNumber.get(0));
-
 
 //        Covariance
         List<? extends Number> numbersInteger = new ArrayList<Integer>();
@@ -34,7 +52,7 @@ public class Main {
         List<Cat> cats = new LinkedList<>();
         List<? extends Animal> animals = cats;
 
-        List<Object>objects = new ArrayList<>();
+        List<Object> objects = new ArrayList<>();
         List<? extends Object> animalsOb = objects;
 
 //        Contravariance
@@ -42,5 +60,8 @@ public class Main {
         numbers.add(Integer.valueOf(10));
         numbers.add(Double.valueOf(10.15));
         numbers.add(Float.valueOf(10.20F));
+        System.out.println(numbers.get(1));
+
+
     }
 }
