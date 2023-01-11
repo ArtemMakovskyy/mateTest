@@ -49,7 +49,6 @@ public class LernMain {
 
     static void print_10(List<? super Cat> list) {
         List<Cat>catList = new ArrayList<>();
-//        catList.add(list.get(0));
         list.add(new Cat("cxz",2,2));
     }
     static <T extends Animal> T print_9(List<T> list, T data) {
