@@ -22,7 +22,8 @@ public class Info {
         /*
         *  1 final
         *  2 No setter. Only constructor
-        *  3 return deep Copy
+        * * 3 Create builder class
+        *  3 return deep Copy of collection
         *  4 return Deep clone
         *  5 clone the object and constructor
         * */

@@ -1,8 +1,9 @@
 package main.immutable.classes;
 
-import java.util.List;
-import java.util.Objects;
+import lombok.Builder;
 
+import java.util.Objects;
+@Builder
 public class Language implements Cloneable{
     private String value;
 
@@ -10,25 +11,25 @@ public class Language implements Cloneable{
         this.value = value;
     }
 
+    public String getValue() {
+        return value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Language)) return false;
         Language language = (Language) o;
-        return Objects.equals(value, language.value);
+        return Objects.equals(getValue(), language.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(getValue());
     }
 
     @Override
     public Language clone()  {
-        try {
-            return (Language) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException();
-        }
+        return new Language(value);
     }
 }

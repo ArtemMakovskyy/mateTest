@@ -1,6 +1,6 @@
 package main.immutable.classes;
 
-public class Address {
+public class Address implements Cloneable{
     private String street;
     private int houseNumber;
 
@@ -12,8 +12,6 @@ public class Address {
     public String getStreet() {
         return street;
     }
-
-
 
     public int getHouseNumber() {
         return houseNumber;
