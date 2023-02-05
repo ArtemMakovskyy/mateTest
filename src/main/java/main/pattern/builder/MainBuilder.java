@@ -18,5 +18,11 @@ public class MainBuilder {
 //
         Plane plane = new Plane.PlaneBuilder().setMinSpeed(25).setMaxSpeed(500).setMinSpeed(100).setBusinessClass(25).setNamePlane("may plaine").setSitsQuantity(30).build();
         System.out.println(plane);
+
+        Human artem = new Human.HumanBuilder()
+                .setName("Artem")
+                .setSerName("Mak")
+                .setAge(43).build();
+        System.out.println(artem);
     }
 }

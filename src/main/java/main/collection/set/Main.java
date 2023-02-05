@@ -1,6 +1,8 @@
 package main.collection.set;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,16 +17,13 @@ public class Main {
             }
         };
 
-        Set<UserComparator>usersComparatorList = new TreeSet<>(userComparator);
-        usersComparatorList.add(new UserComparator("Bob",23));
-        usersComparatorList.add(new UserComparator("Alic",24));
-        usersComparatorList.add(new UserComparator("Jhon",25));
-        usersComparatorList.add(new UserComparator("Bob",18));
-        usersComparatorList.add(new UserComparator("Bob",82));
+        Set<UserComparator> usersComparatorList = new TreeSet<>(userComparator);
+        usersComparatorList.add(new UserComparator("Bob", 23));
+        usersComparatorList.add(new UserComparator("Alic", 24));
+        usersComparatorList.add(new UserComparator("Jhon", 25));
+        usersComparatorList.add(new UserComparator("Bob", 18));
+        usersComparatorList.add(new UserComparator("Bob", 82));
         for (UserComparator user : usersComparatorList)
             System.out.println(user);
-
     }
-
-
 }
