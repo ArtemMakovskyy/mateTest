@@ -1,4 +1,4 @@
-package main.lambda.tasks;
+package main.lambda.tasks._1;
 
 import java.util.Random;
 import java.util.function.Supplier;

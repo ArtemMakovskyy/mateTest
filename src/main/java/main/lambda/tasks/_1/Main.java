@@ -1,6 +1,4 @@
-package main.lambda.tasks;
-
-import java.util.function.Supplier;
+package main.lambda.tasks._1;
 
 public class Main {
     public static void main(String[] args) {

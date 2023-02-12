@@ -7,6 +7,37 @@ public class Plane {
     private int minSpeed;
     private int businessClass;
 
+    public String getNamePlane() {
+        return namePlane;
+    }
+
+    public int getSitsQuantity() {
+        return sitsQuantity;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public int getMinSpeed() {
+        return minSpeed;
+    }
+
+    public int getBusinessClass() {
+        return businessClass;
+    }
+
+    @Override
+    public String toString() {
+        return "Plane{" +
+                "namePlane='" + namePlane + '\'' +
+                ", sitsQuantity=" + sitsQuantity +
+                ", maxSpeed=" + maxSpeed +
+                ", minSpeed=" + minSpeed +
+                ", businessClass=" + businessClass +
+                '}';
+    }
+
     private Plane(PlaneBuilder planeBuilder) {
         this.namePlane = planeBuilder.namePlane;
         this.sitsQuantity = planeBuilder.sitsQuantity;
@@ -49,6 +80,17 @@ public class Plane {
 
         public Plane build() {
             return new Plane(this);
+        }
+
+        @Override
+        public String toString() {
+            return "PlaneBuilder{" +
+                    "namePlane='" + namePlane + '\'' +
+                    ", sitsQuantity=" + sitsQuantity +
+                    ", maxSpeed=" + maxSpeed +
+                    ", minSpeed=" + minSpeed +
+                    ", businessClass=" + businessClass +
+                    '}';
         }
     }
 }
