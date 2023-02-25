@@ -25,7 +25,7 @@ public class BankServiceImpl implements BankService {
         fromAccount.setAmount(newValueFrom);
 
         BigDecimal newValueTo = toAccount.getAmount().add(amount);
-        toAccount.setAmount(newValueFrom);
+        toAccount.setAmount(newValueTo);
 
         accountDao.update(fromAccount);
         accountDao.update(toAccount);

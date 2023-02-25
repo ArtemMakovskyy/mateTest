@@ -1,11 +1,13 @@
 package main.java8.optional.tasks;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class DateTimeApi {
+    private static final int ARRAY_INDEX_YEAR = 0;
+    private static final int ARRAY_INDEX_MONTH = 1;
+    private static final int ARRAY_INDEX_DAY_OF_MONTH = 2;
+    private static final String OffSET_UA = "+02:00";
 
     /**
      * Return the current date as a String depending on a query.
@@ -19,7 +21,18 @@ public class DateTimeApi {
      * In any other case throw DateTimeException.
      **/
     public String todayDate(DateTimePart datePart) {
-        return "Today";
+        switch (datePart) {
+            case FULL:
+                return String.valueOf(LocalDate.now());
+            case YEAR:
+                return String.valueOf(LocalDate.now().getYear());
+            case MONTH:
+                return String.valueOf(LocalDate.now().getMonth());
+            case DAY:
+                return String.valueOf(LocalDate.now().getDayOfMonth());
+            default:
+                throw new DateTimeException("Wrong request!");
+        }
     }
 
     /**
@@ -31,35 +44,41 @@ public class DateTimeApi {
      * Return LocalDate built from these elements. If Array contains more than 3 elements - throw DateTimeException.
      */
     public LocalDate getDate(Integer[] dateParams) {
-        return null;
+        if (dateParams.length != 3) {
+            throw new DateTimeException("Invalid data");
+        }
+        return LocalDate.of(dateParams[ARRAY_INDEX_YEAR],
+                dateParams[ARRAY_INDEX_MONTH],
+                dateParams[ARRAY_INDEX_DAY_OF_MONTH]);
     }
 
     /**
      * Given the time and the number of hours to add, return the changed time.
      */
     public LocalTime addHours(LocalTime localTime, Integer hoursToAdd) {
-        return null;
+        Duration addHours = Duration.ofHours(hoursToAdd);
+        return localTime.plus(addHours);
     }
 
     /**
      * Given the time and the number of minutes to add, return the changed time.
      */
     public LocalTime addMinutes(LocalTime localTime, Integer minutesToAdd) {
-        return null;
+        return localTime.plusMinutes(minutesToAdd);
     }
 
     /**
      * Given the time and the number of seconds to add, return the changed time.
      */
     public LocalTime addSeconds(LocalTime localTime, Integer secondsToAdd) {
-        return null;
+        return localTime.plusSeconds(secondsToAdd);
     }
 
     /**
      * Given the date and the number of weeks to add, return the changed date.
      */
     public LocalDate addWeeks(LocalDate localDate, Integer numberOfWeeks) {
-        return null;
+        return localDate.plusWeeks(numberOfWeeks);
     }
 
     /**
@@ -72,7 +91,18 @@ public class DateTimeApi {
      * if `someDate` is today;
      */
     public String beforeOrAfter(LocalDate someDate) {
-        return "Today";
+//        if (someDate.isBefore(LocalDate.now())) {
+//            return someDate + " is before " + LocalDate.now();
+//        } else if (someDate.isAfter(LocalDate.now())) {
+//            return someDate + " is after " + LocalDate.now();
+//        } else {
+//            return someDate + " is today";
+//        }
+        return someDate.isBefore(LocalDate.now())
+                ? someDate + " is before " + LocalDate.now()
+                : (someDate.isAfter(LocalDate.now())
+                ? someDate + " is after " + LocalDate.now()
+                : someDate + " is today");
     }
 
     /**
@@ -80,7 +110,9 @@ public class DateTimeApi {
      * return LocalDateTime in this timezone.
      */
     public LocalDateTime getDateInSpecificTimeZone(String dateInString, String zone) {
-        return null;
+        Instant instantDateInString = Instant.parse(dateInString);
+        ZonedDateTime zonedDateTime = instantDateInString.atZone(ZoneId.of(zone));
+        return zonedDateTime.toLocalDateTime();
     }
 
     /**
@@ -94,7 +126,9 @@ public class DateTimeApi {
      * OffsetDateTime is recommended to use for storing date values in a database.
      */
     public OffsetDateTime offsetDateTime(LocalDateTime localTime) {
-        return null;
+        ZoneOffset zoneOffset = ZoneOffset.of(OffSET_UA);
+        OffsetDateTime offsetDateTime = OffsetDateTime.of(localTime, zoneOffset);
+        return offsetDateTime;
     }
 
     /**
@@ -102,7 +136,8 @@ public class DateTimeApi {
      * return LocalDate object built from this String.
      */
     public LocalDate parseDate(String date) {
-        return null;
+        LocalDate parse = LocalDate.parse(date, DateTimeFormatter.BASIC_ISO_DATE);
+        return parse;
     }
 
     /**
@@ -110,7 +145,9 @@ public class DateTimeApi {
      * return LocalDate object built from this String.
      */
     public LocalDate customParseDate(String date) {
-        return null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+                .ofPattern("d MMM yyyy", Locale.ENGLISH);
+        return LocalDate.parse(date, dateTimeFormatter);
     }
 
     /**
@@ -120,6 +157,8 @@ public class DateTimeApi {
      * Example: "01 January 2000 18:00".
      */
     public String formatDate(LocalDateTime dateTime) {
-        return null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter
+                .ofPattern("dd MMMM yyyy HH:mm", Locale.ENGLISH);
+        return dateTime.format(dateTimeFormatter);
     }
 }
