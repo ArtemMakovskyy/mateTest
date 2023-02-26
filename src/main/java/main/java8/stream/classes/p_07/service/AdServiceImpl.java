@@ -19,8 +19,7 @@ public class AdServiceImpl implements AdService {
                         .filter(a -> a.getCar().getYear() >= year)
                         .collect(Collectors.groupingBy
                                 (Advertisment::getOwner,
-                                        Collectors.mapping
-                                                (Advertisment::getCar, Collectors.toList()))
+                                        Collectors.mapping(Advertisment::getCar, Collectors.toList()))
                         );
         return userListMap;
     }

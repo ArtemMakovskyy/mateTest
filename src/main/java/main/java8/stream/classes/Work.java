@@ -14,6 +14,8 @@ public class Work {
         fourth();
 //        five();
 
+
+
     }
     private static void five() {
 //        List<String> basicInput = List.of("08:John", "119:Anthony", "019:Nicolas",
@@ -88,6 +90,7 @@ public class Work {
     private void info() {
         List<Integer> results = new ArrayList<>();
         List<Integer> integerList = List.of(1, 2, 3, 4, 5, 6, 7);
+
         results.add(integerList.stream().reduce(Integer::min).get());
         results.add(integerList.stream().reduce((a, b) -> a * b).get());
         results.add(integerList.stream().filter(a -> a % 2 != 0).reduce(Integer::sum).get());

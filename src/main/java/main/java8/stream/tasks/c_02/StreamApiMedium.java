@@ -1,4 +1,4 @@
-package main.stream.tasks.c_02;
+package main.java8.stream.tasks.c_02;
 
 
 import java.util.*;

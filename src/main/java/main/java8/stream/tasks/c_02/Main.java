@@ -20,13 +20,13 @@ public class Main {
         getVisitorsPerYear_uniqueData();
     }
     private static void convertAndModifyNumbers(){
-        main.stream.tasks.c_02.StreamApiMedium sm = new main.stream.tasks.c_02.StreamApiMedium();
+      StreamApiMedium sm = new StreamApiMedium();
         List<Integer> positiveNumbers = List.of(1, 3, 5, 8);
         String s = sm.convertAndModifyNumbers(positiveNumbers);
         System.out.println(s);
     }
     private static void getVisitorsPerYear_uniqueData() {
-        main.stream.tasks.c_02.StreamApiMedium sm = new main.stream.tasks.c_02.StreamApiMedium();
+        StreamApiMedium sm = new StreamApiMedium();
         List<String> basicRecords = List.of("John Stevenson:2020", "Bruce Cage:2015",
                 "Britney Johns:2005", "Brad Wang:2005", "Lee Stone:2011",
                 "Rickie Garrison:2015", "Taras Kozak:2017", "Bart Swan:2018", "Brad Wang:2005");

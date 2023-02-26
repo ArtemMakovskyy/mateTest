@@ -26,7 +26,7 @@ public class Main {
 
         // 4 chars
         String hello  ="Hello";
-        hello.chars();
+        IntStream chars = hello.chars();
 
         // 5  Stream.generate(stringSupplier);
         Supplier<String>stringSupplier = () -> "sss";

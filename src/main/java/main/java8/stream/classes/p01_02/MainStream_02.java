@@ -14,7 +14,6 @@ public class MainStream_02 {
         //DoubleStream
         IntStream intStream = streamNames.mapToInt(s -> s.length());
         OptionalInt max = intStream.max();
-        System.out.println(max);
         intStream.mapToObj(i -> String.valueOf(i));
 
 
