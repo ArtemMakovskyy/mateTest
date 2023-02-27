@@ -23,23 +23,7 @@ returns a list with all unique numbers
 public class UniqueNumbers {
     public  List<Character> getUniqueNumbers(String sourceNumber) {
         // write code here
-        char[] chars = sourceNumber.toCharArray();
-        Arrays.asList(chars);
 
-
-        IntStream chars1 = sourceNumber.chars();
-        Stream<Character> characterStream = chars1.mapToObj(c -> (char) c);
-        characterStream.collect(Collectors.toSet());
-
-
-        List<Character> collect = sourceNumber.chars()
-                .mapToObj(c -> (char) c)
-                .collect(Collectors.toSet())
-                .stream().collect(Collectors.toList());
-
-
-        List<Character> collect1 = collect.stream().collect(Collectors.toList());
-//        System.out.println(Arrays.toString(chars));
 
         return null;
     }

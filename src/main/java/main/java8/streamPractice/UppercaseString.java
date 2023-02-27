@@ -1,6 +1,10 @@
 package main.java8.streamPractice;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /*
 Implement a method getUppercaseString() that accepts an array of strings sourceStrings and returns a list of strings where:
 
@@ -23,8 +27,10 @@ IMPORTANT! You should solve this task using Stream API only.
  */
 public class UppercaseString {
     public  List<String> getUppercaseString(String[] sourceStrings) {
-
-        // write code here
-        return null;
+        return Arrays.stream(sourceStrings)
+                .filter(c -> c.startsWith("a") || c.startsWith("b"))
+                .filter(c -> c.length() > 2)
+                .map(c -> c.toUpperCase())
+                .collect(Collectors.toList());
     }
 }
