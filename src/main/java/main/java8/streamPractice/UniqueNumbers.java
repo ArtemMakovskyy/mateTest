@@ -1,11 +1,7 @@
 package main.java8.streamPractice;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /*
 Implement a method getUniqueNumbers()
@@ -21,10 +17,10 @@ returns a list with all unique numbers
 
  */
 public class UniqueNumbers {
-    public  List<Character> getUniqueNumbers(String sourceNumber) {
-        // write code here
-
-
-        return null;
+    public List<Character> getUniqueNumbers(String sourceNumber) {
+        return sourceNumber.chars()
+                .mapToObj(c -> (char) c)
+                .distinct()
+                .collect(Collectors.toList());
     }
 }
