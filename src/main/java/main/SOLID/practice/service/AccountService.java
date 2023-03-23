@@ -13,4 +13,6 @@ public interface AccountService {
     List<Account>showAll();
     void transaction(String idFrom, String idTo, BigDecimal amount);
     Account get (String id);
+
+    void findByNumber(String accountFrom);
 }

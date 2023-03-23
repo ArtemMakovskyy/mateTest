@@ -72,4 +72,9 @@ public class AccountServiceImpl implements AccountService {
     public Account get(String id) {
         return accountDao.get(id);
     }
+
+    @Override
+    public void findByNumber(String accountFrom) {
+
+    }
 }
