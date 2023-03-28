@@ -7,6 +7,12 @@ public class LiteraryFormat {
     private Long id;
     private String format;
 
+    public LiteraryFormat() {
+    }
+
+    public LiteraryFormat(String format) {
+        this.format = format;
+    }
 
     public Long getId() {
         return id;

@@ -1,13 +1,14 @@
 package main.jdbc.databaseinfo.mate.academy.dao;
 
+import main.jdbc.databaseinfo.mate.academy.lib.Dao;
 import main.jdbc.databaseinfo.mate.academy.model.LiteraryFormat;
 import main.jdbc.databaseinfo.mate.academy.util.ConnectionUtil;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+
+@Dao
 public class LiteraryFormatDaoImpl implements LiteraryFormatDao {
     @Override
     public List<LiteraryFormat> getAll() {
