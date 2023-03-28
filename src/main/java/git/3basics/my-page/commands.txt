@@ -2,3 +2,5 @@ git --version ->
 git status ->
 git init -> activation git in current directory
 git add fileName.html
+git add .
+git log
