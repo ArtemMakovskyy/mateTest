@@ -23,4 +23,4 @@ git reset hah_commit_we_need_to_use
 
 git reset HEAD ^^ --hard -> first moove bottom on two step and reset new data
 =======
->>>>>>> git_lesson
+
