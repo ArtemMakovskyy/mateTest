@@ -1,0 +1,16 @@
+Команда	Опис
+git config --global ...	встановити глобальні параметри Git
+git init	ініціалізувати новий Git репозиторій у поточній директорії
+git status	показати інформацію про репозиторій
+git add ./path/to/files	підготувати зміни файлу для збереження
+git restore file_name	скасувати зміни в модифікованому файлі file_name
+git restore --staged file_name	видалити файл file_name з індексу
+git commit	відкрити текстовий редактор, щоб ввести повідомлення для коміту та зберегти зміни в індексі
+git commit -m 'do something'	зберегти зміни із вказаним повідомленням
+git commit -am 'do something'	підготувати всі змінені файли та зберегти із вказаним повідомленням
+git log	показати історію комітів
+git lg	аліас, який ми створили для log
+git branch	показати всі гілки
+git branch branch_name	створити нову гілку branch_name
+git branch -D branch_name	видалити гілку branch_name
+git checkout hash-or-branch	перейти на іншу гілку або хеш коміту
