@@ -12,3 +12,8 @@ git branch -> list of branches our project
 * v_01
   var1
 git branch gitLesson -> create new branch without moving to it.
+
+git commit
+git commit -m 'inf'
+git commit -am 'inf'
+
