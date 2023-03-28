@@ -1,0 +1,25 @@
+git branch -m main -> RENAME CURRENT BRANCH on main
+git branch lesson-git-practice/implement-page-footer
+   -> create new branch with info after slash
+
+we can change name with command
+    git branch -m
+
+or delete it
+
+git branch new_name -> create branch without switching on it
+git branch -d name -> deleted branch
+
+git checkout -b git_lessons -> create and switch on new branch
+git switch -c git_lesson2 -> create and switch on new branch
+
+git checkout exists_branch_name -> switch exists branch
+git switch exists_branch_name -> switch exists branch
+
+git revert hash_of_commit SHIFT ZZ -> save previous commit on top
+git reset hah_commit_we_need_to_use
+        -> delete all commits to input without delete info
+
+git reset HEAD ^^ --hard -> first moove bottom on two step and reset new data
+
+
