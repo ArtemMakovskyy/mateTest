@@ -4,3 +4,11 @@ git init -> activation git in current directory
 git add fileName.html
 git add .
 git log
+git checkout 454654 ->git lgg
+git checkout v_01 or master -> return to last saved point
+
+git branch -> list of branches our project
+  master
+* v_01
+  var1
+git branch gitLesson -> create new branch without moving to it.
