@@ -16,8 +16,11 @@ git switch -c git_lesson2 -> create and switch on new branch
 git checkout exists_branch_name -> switch exists branch
 git switch exists_branch_name -> switch exists branch
 
+<<<<<<< HEAD
 git revert hash_of_commit SHIFT ZZ -> save previous commit on top
 git reset hah_commit_we_need_to_use
         -> delete all commits to input without delete info
 
 git reset HEAD ^^ --hard -> first moove bottom on two step and reset new data
+=======
+>>>>>>> git_lesson
