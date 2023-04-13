@@ -4,10 +4,7 @@ import main.immutable.classes.Address;
 import main.immutable.classes.Language;
 import main.immutable.classes.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +15,6 @@ public class Main {
     static void start2() {
         Map<SuperUser, List<String>> userFavoriteSubject = new HashMap<>();
         List<String> subjects = List.of("Math", "Chemestry");
-
         SuperUser superUser = new SuperUser();
         superUser.setSuperProperty("Hello world");
         userFavoriteSubject.put(superUser,subjects);
@@ -40,7 +36,5 @@ public class Main {
 //       bob.getLanguages().add(new Language("Ital"));
 //        bob.getLanguages().add("Italian");
         System.out.println(userFavoriteSubject.get(bob));
-
-
     }
 }

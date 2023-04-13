@@ -1,7 +1,6 @@
 package main.SOLID.practice.service;
 
 import main.SOLID.practice.model.Account;
-import main.collection.pecs.A;
 
 import java.math.BigDecimal;
 import java.util.List;
