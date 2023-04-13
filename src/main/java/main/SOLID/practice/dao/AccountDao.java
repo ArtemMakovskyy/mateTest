@@ -1,7 +1,6 @@
 package main.SOLID.practice.dao;
 
 import main.SOLID.practice.model.Account;
-import main.collection.pecs.A;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         e2();
-
+Object o = 132;
     }
     static void e2() {
         String[] name = new String[]{"Artem", "Ivan", "Boris", "Kyiv", "London", "Paris"};
