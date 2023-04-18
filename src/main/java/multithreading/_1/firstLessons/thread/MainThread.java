@@ -24,7 +24,5 @@ public class MainThread {
         Thread secondThread = new MyThread();
         firstThread.start();
         secondThread.start();
-
     }
-
 }

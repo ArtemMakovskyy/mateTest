@@ -1,14 +1,16 @@
 package tasks;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        IPAddresses ipAddresses = new IPAddresses();
-        String start = "10.0.0.0";
-        String end = "10.0.0.50";
-        long l = ipAddresses.countIPBetween(start, end);
-        System.out.println(l);
+Triangular triangular = new Triangular();
+        System.out.println(triangular.getTriangular(2));
 
-        Long d = 256L * 256L * 256L * 256L;
-        System.out.println(d);
+//        Dictionary dictionary =
+//                new Dictionary(new String[]
+//                        {"cherry", "pineapple", "melon", "strawberry", "raspberry"});
+//        System.out.println(dictionary.findMostSimilar("berry"));
+//    }
     }
 }
