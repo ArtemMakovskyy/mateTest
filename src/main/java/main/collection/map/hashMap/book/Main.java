@@ -1,9 +1,6 @@
 package main.collection.map.hashMap.book;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,11 +9,25 @@ public class Main {
 
     }
     public static void test() {
-        Map<String, Number> numbers = new HashMap<>();
+        Map<String, Number> numbers = new HashMap<>(50,0.50f);
         numbers.put("one", 1);
         numbers.put("two", 2);
         numbers.put("three", 3);
         numbers.put(null, 4);
+        HashSet<String>setNumbers = new HashSet<>(numbers.keySet());
+
+
+        System.out.println(numbers.get("one"));
+        System.out.println(numbers.get("one"));
+        Map identityHashMap = new IdentityHashMap();
+        String s = "sdf";
+        String s2 = "sdf";
+        System.out.println(System.identityHashCode(s));
+        System.out.println(System.identityHashCode(s2));
+        System.out.println(s.hashCode());
+        System.out.println(s2.hashCode());
+//        Map.Entry<String, Number> =
+
         System.out.println(numbers);
     }
     static void first(){

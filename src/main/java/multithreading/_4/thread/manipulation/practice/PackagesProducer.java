@@ -7,11 +7,13 @@ public class PackagesProducer implements Runnable{
     private PackagesService packagesService;
     private Thread thread;
 
-    public PackagesProducer(List<String> packages, PackagesService packagesService) {
+    public PackagesProducer(List<String> packages, PackagesService packagesService, boolean autoStart) {
         this.packages = packages;
         this.packagesService = packagesService;
-        thread = new Thread(this);
-        thread.start();
+        if (autoStart) {
+            thread = new Thread(this);
+            thread.start();
+        }
     }
 
     @Override

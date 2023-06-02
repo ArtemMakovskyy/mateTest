@@ -9,11 +9,13 @@ public class PackagesConsumer implements Runnable {
     private Thread thread;
     private List<String> packages = new ArrayList<>();
 
-    public PackagesConsumer(PackagesService packagesService, String lastPackage) {
+    public PackagesConsumer(PackagesService packagesService, String lastPackage, boolean autoStart) {
         this.packagesService = packagesService;
         this.lastPackage = lastPackage;
-        thread = new Thread(this);
-        thread.start();
+        if (autoStart) {
+            thread = new Thread(this);
+            thread.start();
+        }
     }
 
     @Override

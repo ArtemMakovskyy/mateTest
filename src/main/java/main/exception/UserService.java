@@ -8,6 +8,11 @@ public class UserService {
                 return Integer.parseInt(data[1]);
             }
         }
-        throw new UserNotFoundException("User with given email doesn't exist");
+        throw new UserNotFoundRuntimeExceptionUnchecked("User with given email doesn't exist");
+    }
+}
+class UserNotFoundRuntimeExceptionUnchecked extends RuntimeException {
+    public UserNotFoundRuntimeExceptionUnchecked(String message) {
+        super(message);
     }
 }

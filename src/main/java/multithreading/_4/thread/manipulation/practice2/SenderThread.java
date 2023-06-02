@@ -19,7 +19,7 @@ public class SenderThread implements Runnable{
         for (String s : dataList) {
             try {
                 serviceTransmitter.put(s);
-                Thread.sleep(500);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
