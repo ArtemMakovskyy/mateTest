@@ -15,10 +15,7 @@ public class Dictionary {
         return null;
     }
     int quantityEqualsSymbols(String term){
-        int[]tableMatches = new int[words.length];
-        for (int i = 0; i < term.length(); i++) {
 
-        }
         return 0;
     }
 }

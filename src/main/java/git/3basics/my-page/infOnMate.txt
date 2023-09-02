@@ -14,3 +14,4 @@ git branch	показати всі гілки
 git branch branch_name	створити нову гілку branch_name
 git branch -D branch_name	видалити гілку branch_name
 git checkout hash-or-branch	перейти на іншу гілку або хеш коміту
+git checkout -b hw-1-solution origin/master створити нову гілку та перейти на неї
