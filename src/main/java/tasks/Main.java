@@ -3,10 +3,9 @@ package tasks;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import java.util.Collections;
 import java.util.Comparator;
-
+import java.util.Stack;
 import java.util.function.IntUnaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,12 +16,31 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-//        int[] nums = {-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0};
-//        String result = extractRange(nums);
-//        System.out.println(result); // Вывод: "-3--1,2,10,15,16,18-20"
-        int numberOfSides = 3;
-        int sum = getSumOfAngles(numberOfSides);
-        System.out.println("Сумма углов многоугольника с " + numberOfSides + " сторонами: " + sum + " градусов");
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
+    }
+
+    public static boolean isValid(String string) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : string.toCharArray()) {
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            } else if (ch == ')' || ch == ']' || ch == '}') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                char top = stack.pop();
+                if (!isMatching(top, ch)) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    private static boolean isMatching(char open, char close) {
+        return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}');
     }
 
     public static int getSumOfAngles(int numberOfSides) {
