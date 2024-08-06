@@ -1,23 +1,34 @@
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
 
 public class Main {
     public static void main(String[] args) {
-        contrvariant();
-        invariant();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        User user = new User("John", 30);
+
+        try {
+            String json = objectMapper.writeValueAsString(user);
+            System.out.println(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-   static void contrvariant(){
-        List<Number> nums = new ArrayList<Number>(25);
-        List<? super Integer> ints = nums;
-        ints.add(36);
-        ints.get(0);
-       System.out.println(ints);
+
+}
+
+@Data
+class User {
+    private String name;
+    private int age;
+
+    public User() {}
+
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-    static void invariant(){
-        List<Integer> ints = new ArrayList<Integer>(25);
-        List<? extends Number> nums = ints;
-//        nums.add(36);  //it doesn't work
-//        nums.get(0);
-        System.out.println(nums);
-    }
+
 }
