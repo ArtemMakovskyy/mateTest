@@ -41,9 +41,7 @@ public class ProductStreamTasks {
 
     public static List<Product> sortByPriceDescending(List<Product> products) {
         return products.stream()
-                .sorted(Comparator.comparing(Product::getPrice)
-                        .reversed()
-                )
+                .sorted(Comparator.comparing(Product::getPrice).reversed())
                 .collect(Collectors.toList());
     }
 
