@@ -6,6 +6,7 @@ import java.util.Stack;
 import live.coding.binary.tree.TreeNode;
 
 public class Solution104 {
+
     public int maxDepth(TreeNode root) {
         int resault = 0;
         resault = recursionSolution(root);

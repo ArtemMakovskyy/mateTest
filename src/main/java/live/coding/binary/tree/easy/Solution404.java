@@ -11,11 +11,9 @@ public class Solution404 {
         if (node == null) {
             return 0;
         }
-
         if (node.left == null && node.right == null && isLeft) {
             return node.val;
         }
-
         return sumLeftLeaves(node.left, true) + sumLeftLeaves(node.right, false);
     }
 }

@@ -10,27 +10,19 @@ public class Solution590 {
         if (root == null) {
             return result;
         }
-
         Stack<Node> stack = new Stack<>();
         Stack<Node> outputStack = new Stack<>();
-
         stack.push(root);
-
         while (!stack.isEmpty()) {
             Node node = stack.pop();
             outputStack.push(node);
-
-            // Добавляем детей в стек
             for (Node child : node.children) {
                 stack.push(child);
             }
         }
-
-        // Переносим узлы из outputStack в результат
         while (!outputStack.isEmpty()) {
             result.add(outputStack.pop().val);
         }
-
         return result;
     }
 }
