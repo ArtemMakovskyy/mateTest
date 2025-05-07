@@ -7,25 +7,25 @@ public class BinaryTreeUtil {
 
     public TreeNode createBinaryTree226_1() {
         Integer[] values = {4, 2, 7, 1, 3, 6, 9};
-        return createBinaryTree114(values);
+        return createBinaryTreeBase(values);
     }
 
     public TreeNode createBinaryTree226_2() {
         Integer[] values = {2, 1, 3};
-        return createBinaryTree114(values);
+        return createBinaryTreeBase(values);
     }
 
     public TreeNode createBinaryTree112_1() {
         Integer[] values = {5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1};
-        return createBinaryTree114(values);
+        return createBinaryTreeBase(values);
     }
     public TreeNode createBinaryTree112_2() {
         Integer[] values = {1, 2, 3};
-        return createBinaryTree114(values);
+        return createBinaryTreeBase(values);
     }
     public TreeNode createBinaryTree112_3() {
         Integer[] values = {};
-        return createBinaryTree114(values);
+        return createBinaryTreeBase(values);
     }
 
     public TreeNode createBinaryTree104() {
@@ -74,7 +74,7 @@ public class BinaryTreeUtil {
     }
 
     // Метод для создания дерева из массива
-    public TreeNode createBinaryTree114(Integer[] values) {
+    public static TreeNode createBinaryTreeBase(Integer[] values) {
         if (values == null || values.length == 0) {
             return null;
         }
@@ -102,6 +102,8 @@ public class BinaryTreeUtil {
 
         return root;
     }
+
+
 
     // Метод для визуализации дерева в удобном формате
     public static void printTree(TreeNode root) {

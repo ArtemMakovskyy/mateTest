@@ -92,7 +92,7 @@ public class Start {
     static void manipulation114() {
         System.out.println("https://leetcode.com/problems/flatten-binary-tree-to-linked-list/");
         Integer[] values = {1, 2, 5, 3, 4, null, 6};
-        TreeNode root = BINARY_TREE_UTIL.createBinaryTree114(values);
+        TreeNode root = BINARY_TREE_UTIL.createBinaryTreeBase(values);
 
         System.out.println("Created tree:");
         BINARY_TREE_UTIL.printTree(root);

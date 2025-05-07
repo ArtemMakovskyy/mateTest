@@ -1,0 +1,16 @@
+package work.task.task2;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class Neighbor {
+    private int neighborId;
+    private int cost;
+
+    public Neighbor(int neighborId, int cost) {
+        this.neighborId = neighborId;
+        this.cost = cost;
+    }
+}

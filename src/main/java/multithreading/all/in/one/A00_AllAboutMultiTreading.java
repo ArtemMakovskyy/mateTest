@@ -14,8 +14,8 @@ public class A00_AllAboutMultiTreading {
 //        createThreadWithThread();
 //        createThreadWithThreadWithUnonimClass();
 //        createThreadWithImplRunnable();
-//        createThreadRunnableWithExecutor();
-//        createThreadCallableWithExecutor();
+        createThreadRunnableWithExecutor();
+        createThreadCallableWithExecutor();
         createThreadCallableWithExecutorTaskSum();
     }
 
@@ -160,8 +160,6 @@ class MyCallableStringLength implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        Thread.sleep(100);
-        System.out.println(value + " " + Thread.currentThread().getName());
         return value.length();
     }
 }
